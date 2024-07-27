@@ -9,7 +9,7 @@ export class Contact {
 
     constructor(nom, prenom, telephone) {
         this.nom = nom;
-        this.prednom = prenom;
+        this.prenom = prenom;
         this.telephone = telephone;
     }
 }

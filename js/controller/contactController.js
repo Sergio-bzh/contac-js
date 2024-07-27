@@ -8,7 +8,7 @@ const contact = new Contact("dominique", "anne", "0789654234"); ///* Instanciati
 listContacts.push(contact); ///* Push du contact dans le tableau */
 
 /* START OK OK OK OK */
-
+/* # # # # # # # # AJOUTER # # # # # # # # */
 function ajouterContact(nom, prenom, telephone){
 
     const monContact = new Contact(nom, prenom, telephone);
@@ -20,7 +20,23 @@ ajouterContact("Anne", "CHOULET", "0102030405");
 ajouterContact("Dominique", "CARRASCO", "0102030405");
 // console.log(listContacts);
 
-/* # # # # # # # # # # # # # # # # # */
+/* # # # # # # # # AFFICHER # # # # # # # # */
+function afficherContacts(listContacts){
+    for(let i=0; i<listContacts.length; i++){
+        let contact = listContacts[i];
+        contact = {
+            nom: listContacts[i].nom,
+            prenom: listContacts[i].prenom,
+            telephone: listContacts[i].telephone
+        };
+        console.log(contact);
+    }
+    // return console.log(contact);
+}
+afficherContacts(listContacts)
+
+
+/* # # # # # # # # SUPPRIMER # # # # # # # # */
 /*
 function supprimerContact(index){
 
@@ -32,19 +48,8 @@ function supprimerContact(index){
 supprimerContact(1);
 */
 
-
+/* # # # # # # # # A # # # # # # # # */
 /* END OK OK OK OK */
-
-
-function afficherContacts(nom){
-    let displayContact = ""
-    for(let i=0; i<listContacts.length; i++){
-        displayContact = listContacts[i];
-        console.log(nom);
-    }
-    return displayContact;
-}
-// afficherContacts();
 
 function rechercherContact(prenom) {
 
@@ -57,4 +62,4 @@ function rechercherContact(prenom) {
 }
 rechercherContact("anne");
 
-console.log(listContacts);
+// console.log(listContacts);
