@@ -2,12 +2,9 @@ import {Contact} from "../models/Contact.js";
 
 let listContacts = [];
 
-
-
 const contact = new Contact("dominique", "anne", "0789654234"); ///* Instanciation d'un contact en appellant la classe */
 listContacts.push(contact); ///* Push du contact dans le tableau listContacts */
 
-/* START OK OK OK OK */
 /* # # # # # # # # AJOUTER # # # # # # # # */
 function ajouterContact(nom, prenom, telephone){
 
@@ -16,7 +13,7 @@ function ajouterContact(nom, prenom, telephone){
     listContacts.push(monContact);  ///* Je n'ai pas utilisé le mot return (procédure) */
 }
 ajouterContact("NUNEZ", "Sergio", "0102030405"); ///* Instanciation d'un contact en appellant la fonction ajouterContact() */
-ajouterContact("CHOULET", "Anne", "0102030405");
+ajouterContact("CHOULET", "anne", "0102030405");
 ajouterContact("CARRASCO", "Dominique", "0102030405");
 // console.log(listContacts);
 
@@ -30,35 +27,43 @@ function afficherContacts(listContacts){
             prenom: listContacts[i].prenom,
             telephone: listContacts[i].telephone
         };
-        console.log(contact);
+        // console.log(contact);
     }
     return contact;
 }
-afficherContacts(listContacts)
+// afficherContacts(listContacts)
+
+/* # # # # # # # # RECHERCHER # # # # # # # # */
+function rechercherContact(listContacts, prenom) {
+
+    // Je créé un tableau temporaire pour passer le contenu du tableau passé en paramètre en minuscules et un autre pour stocker les objets trouvés
+    const tableauTemporaire = listContacts;
+    const objTrouves = [];
+
+    tableauTemporaire.forEach(function (array) {
+        ["nom"].forEach(function (n) {
+            array[n] = array[n].toLowerCase();
+        })
+    })
+
+    for(let i = 0; i<listContacts.length; i++){
+        console.log(listContacts[i]);
+        if(listContacts[i].prenom === prenom){
+            objTrouves.push(listContacts[i]);
+        }
+    }
+    console.log(objTrouves);
+    return objTrouves;
+}
+rechercherContact(listContacts,"anne");
+console.log(listContacts);
 
 /* # # # # # # # # SUPPRIMER # # # # # # # # */
 function supprimerContact(index){
 
     let nom = listContacts.splice(index, 1);
-    console.log(nom[0])
+    // console.log(nom[0])
     return console.log("Le contact " +" avec l'indice " +index+" ("+nom[0].prenom+" "+nom[0].nom+ ") a bien été supprimé.");
 }
 supprimerContact(1);
-console.log(listContacts);
-
-
-/* # # # # # # # # A # # # # # # # # */
-/* END OK OK OK OK */
-
-function rechercherContact(prenom) {
-
-    for(let i = 0; i<listContacts.length; i++){
-        if(prenom == listContacts[i]){
-            prenom = listContacts[i];
-        }
-    }
-    return prenom;
-}
-rechercherContact("anne");
-
 // console.log(listContacts);
