@@ -15,9 +15,9 @@ function ajouterContact(nom, prenom, telephone){
 
     listContacts.push(monContact);
 }
-ajouterContact("Sergio", "NUNEZ", "0102030405");
-ajouterContact("Anne", "CHOULET", "0102030405");
-ajouterContact("Dominique", "CARRASCO", "0102030405");
+ajouterContact("NUNEZ", "Sergio", "0102030405");
+ajouterContact("CHOULET", "Anne", "0102030405");
+ajouterContact("CARRASCO", "Dominique", "0102030405");
 // console.log(listContacts);
 
 /* # # # # # # # # AFFICHER # # # # # # # # */
@@ -31,7 +31,7 @@ function afficherContacts(listContacts){
         };
         console.log(contact);
     }
-    // return console.log(contact);
+    return contact;
 }
 afficherContacts(listContacts)
 
